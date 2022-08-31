@@ -1,0 +1,16 @@
+CREATE TABLE Products (
+	"Id" INTEGER PRIMARY KEY IDENTITY(0,1),
+	"Name" TEXT NOT NULL
+)
+
+CREATE TABLE Categories(
+	"Id" INTEGER PRIMARY KEY IDENTITY(0,1),
+	"Name" TEXT NOT NULL
+)
+
+CREATE TABLE ProductsCategories (
+	ProductId INTEGER NOT NULL,
+	CategoryId INTEGER NOT NULL,
+	FOREIGN KEY (ProductId) REFERENCES Products(Id),
+	FOREIGN KEY (CategoryId) REFERENCES Categories(Id)
+)
