@@ -6,7 +6,7 @@ namespace Areas
         /// <summary>
         /// Текущий экземпляр
         /// </summary>
-        public IFigure Instanse { get; }
+        public IFigure Instanсe { get; }
 
         /// <summary>
         /// .ctor
@@ -14,13 +14,13 @@ namespace Areas
         /// <param name="figure">Экземпляр фигуры</param>
         public Figure(IFigure figure)
         {
-            Instanse = figure;
+            Instanсe = figure;
         }
 
         /// <inheritdoc/>
         public double Area()
         {
-            return Instanse.Area();
+            return Instanсe.Area();
         }
     }
 }

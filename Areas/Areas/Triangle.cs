@@ -25,7 +25,7 @@ namespace Areas
         /// <summary>
         /// Является ли треугольник прямоугольным
         /// </summary>
-        public bool IsRight => CheckRight(LineA, LineB, LineC) || CheckRight(LineB, LineC, LineA) || CheckRight(LineC, LineA, LineB);
+        public bool IsRight => CheckRight(LineA, LineB, LineC);
 
         /// <summary>
         /// Является ли треугольник прямоугольным
@@ -97,8 +97,8 @@ namespace Areas
             }
 
             // Heron's formula
-            var s = 0.5 * (LineA + LineB + LineC);
-            return Math.Sqrt(s * (s - LineA) * (s - LineB) * (s - LineC));
+            var semiperimeter = 0.5 * (LineA + LineB + LineC);
+            return Math.Sqrt(semiperimeter * (semiperimeter - LineA) * (semiperimeter - LineB) * (semiperimeter - LineC));
         }
 
         private static bool CheckRight(double line1, double line2, double line3) => Math.Abs((line1 * line1) + (line2 * line2) - (line3 * line3)) < Consts.Epsilon;
