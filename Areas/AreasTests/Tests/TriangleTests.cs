@@ -61,6 +61,15 @@ namespace AreasTests.Tests
             Assert.Throws<UnpositiveArgumentException>(() => Area(a, b, c));
         }
 
+        [TestCase(3, 4, 5, true)]
+        [TestCase(2, 1, 2, false)]
+        public void IsRight_AnyLines_RightResult(double a, double b, double c, bool expected)
+        {
+            var triangle = new Triangle(a, b, c);
+            var actual = triangle.IsRight;
+            Assert.That(expected, Is.EqualTo(actual));
+        }
+
         private static double Area(double a, double b, double c)
         {
             var triangle = new Triangle(a, b, c);
